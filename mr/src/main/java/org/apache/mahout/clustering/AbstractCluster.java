@@ -236,7 +236,8 @@ public abstract class AbstractCluster implements Cluster {
   }
   
   public void observe(Vector x, double weight) {
-    if (weight == 1.0) {
+	  //http://thething.disco.unimib.it/sonarqube/issues/search#issues=AVF9T6tGfPSRWuAsrjtc
+	  if(Float.compare((float) weight,0) == 0){
       observe(x);
     } else {
       setS0(getS0() + weight);
