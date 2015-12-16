@@ -67,7 +67,9 @@ public class ResultAnalyzer {
       incorrectlyClassified++;
     }
     confusionMatrix.addInstance(correctLabel, classifiedResult);
-    if (classifiedResult.getLogLikelihood() != Double.MAX_VALUE) {
+    
+    //http://thething.disco.unimib.it/sonarqube/issues/search#issues=AVF9T6qJfPSRWuAsrjpM
+    if(Double.compare(classifiedResult.getLogLikelihood(), Double.MAX_VALUE)!= 0){
       summarizer.add(classifiedResult.getLogLikelihood());
       hasLL = true;
     }
