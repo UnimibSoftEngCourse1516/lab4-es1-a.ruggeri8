@@ -123,6 +123,12 @@ public final class Varint {
     int i = 0;
     long b;
     while (((b = in.readByte()) & 0x80L) != 0) {
+    	
+    	
+    	b = in.readByte();
+    	while ((b & 0x80L) != 0) {
+    		
+    	}
       value |= (b & 0x7F) << i;
       i += 7;
       Preconditions.checkArgument(i <= 63, "Variable length quantity is too long (must be <= 63)");
