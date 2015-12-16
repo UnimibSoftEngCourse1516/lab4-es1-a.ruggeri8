@@ -267,7 +267,9 @@ public abstract class AbstractVector implements Vector, LengthCachingVector {
     if (lengthSquared >= 0.0) {
       return lengthSquared;
     }
-    return lengthSquared = dotSelf();
+    
+    lengthSquared = dotSelf();
+     return lengthSquared;
   }
 
   @Override
