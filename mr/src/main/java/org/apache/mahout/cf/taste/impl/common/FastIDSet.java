@@ -158,7 +158,8 @@ public final class FastIDSet implements Serializable, Cloneable, Iterable<Long> 
     long[] result = new long[numEntries];
     for (int i = 0, position = 0; i < result.length; i++) {
       while (keys[position] == NULL || keys[position] == REMOVED) {
-        position++;
+    	  //http://thething.disco.unimib.it/sonarqube/issues/search#issues=AVF9T6mcfPSRWuAsrjll
+       
       }
       result[i] = keys[position++];
     }
