@@ -218,8 +218,9 @@ public class ObjectArrayList<T> extends AbstractObjectList<T> {
     T[] theElements = (T[]) elements;
     int theSize = size;
 
-    for (int i = 0; i < theSize;) {
-      if (!procedure.apply(theElements[i++])) {
+    for (int i = 0; i < theSize;i++) {
+    	//http://thething.disco.unimib.it/sonarqube/issues/search#issues=AVF81eQLfPSRWuAsrhm-
+      if (!procedure.apply(theElements[i])) {
         return false;
       }
     }
